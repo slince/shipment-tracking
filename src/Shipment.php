@@ -8,7 +8,7 @@ namespace Slince\ShipmentTracker;
 /**
  * @author Adrien Brault <adrien.brault@gmail.com>
  */
-class Shipment
+class Shipment implements ShipmentInterface
 {
     /**
      * @var ShipmentEvent[]
