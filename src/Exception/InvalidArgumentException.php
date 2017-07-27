@@ -5,6 +5,6 @@
  */
 namespace Slince\ShipmentTracking\Exception;
 
-class RuntimeException extends \RuntimeException
+class InvalidArgumentException extends \InvalidArgumentException
 {
 }

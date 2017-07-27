@@ -12,7 +12,7 @@ A flexible and shipment tracking library for multi carriers.
 
 ```php
 
-$tracker = new Slince\ShipmentTracking\DHLECommerce\DHLECommerceTracker();
+$tracker = new Slince\ShipmentTracking\DHLECommerce\DHLECommerceTracker(CLIENT_ID, PASSWORD);
 
 try {
    $shipment = $tracker->track('CNAQV100168101');
@@ -20,14 +20,15 @@ try {
    if ($shipment->isDelivered()) {
        echo "Delivered";
    }
-   
-   //print the shipment events
-   print_r($shipment->getEvents());
+   echo $shipment->getOrigin();
+   echo $shipment->getDestination();
+   print_r($shipment->getEvents());  //print the shipment events
 }
 
 ```
 
-All payment gateways must implement GatewayInterface, and will usually extend AbstractGateway for basic functionality.
+All shipment trackers must implement `Slince\ShipmentTracking\TrackerInterface`, and will usually extend `Slince\ShipmentTracking\HttpAwareTracker` for basic functionality if the carrier's api is based on
+HTTP
 
 ## Shipment Carriers:
 
@@ -35,7 +36,7 @@ The following carriers are available:
 
 | Carrier | Composer Package | Maintainer |
 | --- | --- | --- |
-| [https://github.com/slince/shipment-tracking-dhlecommerce](DHL eCommerce)| slince/shipment-tracking-dhlecommerce | Tao |
+| [DHL eCommerce](https://github.com/slince/shipment-tracking-dhlecommerce)| slince/shipment-tracking-dhlecommerce | [Tao](https://github.com/slince) |
 
 ## License
  

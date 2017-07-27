@@ -1,7 +1,8 @@
 {
     "name": "slince/shipment-tracking",
-    "license": "MIT",
     "keywords": ["shipment", "tracking", "tracker", "parcel", "USPS", "ePacket", "China Post"],
+    "description": "A flexible and shipment tracking library for multi carriers.",
+    "license": "MIT",
     "authors": [
         {
             "name": "Tao",

@@ -2,6 +2,7 @@
 namespace Slince\ShipmentTracking\Tests;
 
 use PHPUnit\Framework\TestCase;
+use Slince\ShipmentTracking\Exception\TrackException;
 use Slince\ShipmentTracking\Shipment;
 use Slince\ShipmentTracking\ShipmentEvent;
 
@@ -53,6 +54,26 @@ class ShipmentTest extends TestCase
         $this->assertNull($shipment->getDeliveredAt());
         $shipment->setDeliveredAt(new \DateTime());
         $this->assertNotNull($shipment->getDeliveredAt());
+    }
+
+    public function testStatus()
+    {
+        $shipment = new Shipment();
+        $this->assertNull($shipment->getStatus());
+        $shipment->setStatus('foo');
+        $this->assertNotNull($shipment->getStatus());
+    }
+
+    public function testEvents()
+    {
+        $shipment = new Shipment();
+        $events = [ShipmentEvent::fromArray([
+            'location' => 'Foo',
+            'description' => 'bar'
+        ])];
+        $this->assertCount(0, $shipment->getEvents());
+        $shipment->setEvents($events);
+        $this->assertCount(1, $shipment->getEvents());
     }
 
     public function testJson()
