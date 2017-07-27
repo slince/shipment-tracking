@@ -5,9 +5,6 @@
  */
 namespace Slince\ShipmentTracking;
 
-/**
- * @author Adrien Brault <adrien.brault@gmail.com>
- */
 class Shipment implements ShipmentInterface, \JsonSerializable
 {
     /**
