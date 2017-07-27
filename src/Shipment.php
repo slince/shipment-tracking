@@ -8,7 +8,7 @@ namespace Slince\ShipmentTracking;
 /**
  * @author Adrien Brault <adrien.brault@gmail.com>
  */
-class Shipment implements ShipmentInterface
+class Shipment implements ShipmentInterface, \JsonSerializable
 {
     /**
      * @var ShipmentEvent[]
@@ -50,9 +50,10 @@ class Shipment implements ShipmentInterface
      */
     protected $isDelivered;
 
-    public function __construct(array $events)
+    public function __construct(array $events = [], $isDelivered = null)
     {
         $this->events = $events;
+        $this->isDelivered = $isDelivered;
     }
 
     /**
@@ -195,5 +196,22 @@ class Shipment implements ShipmentInterface
     {
         $this->isDelivered = $isDelivered;
         return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function jsonSerialize()
+    {
+        return [
+            'is_delivered' => $this->isDelivered,
+            'status' => $this->status,
+            'weight' => $this->weight,
+            'weight_unit' => $this->weightUnit,
+            'origin' => $this->origin,
+            'destination' => $this->destination,
+            'delivered_at' => $this->deliveredAt,
+            'events' => $this->events
+        ];
     }
 }
