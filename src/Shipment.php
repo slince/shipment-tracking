@@ -45,6 +45,11 @@ class Shipment implements ShipmentInterface
      */
     protected $status;
 
+    /**
+     * @var boolean
+     */
+    protected $isDelivered;
+
     public function __construct(array $events)
     {
         $this->events = $events;
@@ -171,6 +176,24 @@ class Shipment implements ShipmentInterface
     public function setStatus($status)
     {
         $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDelivered()
+    {
+        return $this->isDelivered;
+    }
+
+    /**
+     * @param bool $isDelivered
+     * @return Shipment
+     */
+    public function setIsDelivered($isDelivered)
+    {
+        $this->isDelivered = $isDelivered;
         return $this;
     }
 }
