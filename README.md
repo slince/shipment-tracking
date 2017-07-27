@@ -22,6 +22,9 @@ try {
    echo $shipment->getOrigin();
    echo $shipment->getDestination();
    print_r($shipment->getEvents());  //print the shipment events
+   
+} catch (Slince\ShipmentTracking\Exception\TrackException $exception) {
+    exit('Track error: ' . $exception->getMessage());
 }
 
 ```
