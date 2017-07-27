@@ -38,7 +38,12 @@ class Shipment implements ShipmentInterface
     /**
      * @var \DateTime
      */
-    protected $deliveryDate;
+    protected $deliveredAt;
+
+    /**
+     * @var string
+     */
+    protected $status;
 
     public function __construct(array $events)
     {
@@ -120,19 +125,27 @@ class Shipment implements ShipmentInterface
     /**
      * @return \DateTime
      */
-    public function getDeliveryDate()
+    public function getDeliveredAt()
     {
-        return $this->deliveryDate;
+        return $this->deliveredAt;
     }
 
     /**
-     * @param \DateTime $deliveryDate
+     * @param \DateTime $deliveredAt
      * @return Shipment
      */
-    public function setDeliveryDate($deliveryDate)
+    public function setDeliveredAt($deliveredAt)
     {
-        $this->deliveryDate = $deliveryDate;
+        $this->deliveredAt = $deliveredAt;
         return $this;
+    }
+
+    /**
+     * @param ShipmentEvent[] $events
+     */
+    public function setEvents($events)
+    {
+        $this->events = $events;
     }
 
     /**
@@ -141,5 +154,23 @@ class Shipment implements ShipmentInterface
     public function getEvents()
     {
         return $this->events;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param string $status
+     * @return Shipment
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
     }
 }
