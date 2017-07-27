@@ -3,7 +3,7 @@
  * Slince shipment tracker library
  * @author Tao <taosikai@yeah.net>
  */
-namespace Slince\ShipmentTracker;
+namespace Slince\ShipmentTracking;
 
 /**
  * @author Adrien Brault <adrien.brault@gmail.com>
