@@ -39,7 +39,7 @@ The following carriers are available:
 | Carrier | Composer Package | Maintainer |
 | --- | --- | --- |
 | [DHL eCommerce](https://github.com/slince/shipment-tracking-dhl-ecommerce)| slince/shipment-tracking-dhl-ecommerce | [Tao](https://github.com/slince) |
-| [Yanwen Exprerss(燕文物流)](https://github.com/slince/shipment-tracking-yanwen-express)| slince/shipment-tracking-anwen-express | [Tao](https://github.com/slince) |
+| [Yanwen Exprerss(燕文物流)](https://github.com/slince/shipment-tracking-yanwen-express)| slince/shipment-tracking-yanwen-express | [Tao](https://github.com/slince) |
 
 ## License
  
