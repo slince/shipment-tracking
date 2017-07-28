@@ -32,11 +32,11 @@ try {
 All shipment trackers must implement `Slince\ShipmentTracking\TrackerInterface`, and will usually extend `Slince\ShipmentTracking\HttpAwareTracker` for basic functionality if the carrier's api is based on
 HTTP
 
-## Shipment Carriers:
+## Shipment trackers:
 
 The following carriers are available:
 
-| Carrier | Composer Package | Maintainer |
+| Tracker | Composer Package | Maintainer |
 | --- | --- | --- |
 | [DHL eCommerce](https://github.com/slince/shipment-tracking-dhl-ecommerce)| slince/shipment-tracking-dhl-ecommerce | [Tao](https://github.com/slince) |
 | [Yanwen Exprerss(燕文物流)](https://github.com/slince/shipment-tracking-yanwen-express)| slince/shipment-tracking-yanwen-express | [Tao](https://github.com/slince) |
