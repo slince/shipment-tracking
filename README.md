@@ -41,7 +41,7 @@ The following carriers are available:
 | [DHL eCommerce](https://github.com/slince/shipment-tracking-dhl-ecommerce)| slince/shipment-tracking-dhl-ecommerce | [Tao](https://github.com/slince) |
 | [Yanwen Exprerss(燕文物流)](https://github.com/slince/shipment-tracking-yanwen-express)| slince/shipment-tracking-yanwen-express | [Tao](https://github.com/slince) |
 | [快递100](https://github.com/slince/shipment-tracking-kuaidi100)| slince/shipment-tracking-kuaidi100 | [Tao](https://github.com/slince) |
-| [E邮宝/E包裹/特快/国际EMS](https://github.com/slince/shipment-tracking-ems)| slince/shipment-tracking-ems | [Tao](https://github.com/slince) |
+| [E邮宝/E包裹/E特快/国际EMS](https://github.com/slince/shipment-tracking-ems)| slince/shipment-tracking-ems | [Tao](https://github.com/slince) |
 
 ## License
  
