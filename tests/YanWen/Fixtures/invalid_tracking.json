@@ -1,0 +1,14 @@
+{
+  "code": 1,
+  "message": "error",
+  "state": 40,
+  "waybill_number": "LW529183198CN",
+  "exchange_number": "LW529183198CN",
+  "order_number": "228311-3-296291",
+  "yanwen_number": "AA071365715YR",
+  "origin_country": "China",
+  "destin_country": "United States",
+  "receive_date": "2017-07-13T01:26:07.47+08:00",
+  "send_date": "2017-07-13T04:41:55.47+08:00",
+  "days": 13
+}

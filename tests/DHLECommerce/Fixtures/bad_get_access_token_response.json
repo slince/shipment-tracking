@@ -1,0 +1,9 @@
+{
+  "accessTokenResponse": {
+    "responseStatus": {
+      "code": "100099",
+      "message": "Exception occured when assigning token.",
+      "messageDetails": "Input parameter(s) does not match any client."
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "accessTokenResponse": {
+    "token": "89439b80asda09a2as168f94d6ffsssfefa6e0139123",
+    "token_type": "Bearer",
+    "expires_in_seconds": "82805",
+    "client_id": "MasdasjYyNjasdasE3MTk5",
+    "responseStatus": {
+      "code": "100000",
+      "message": "Service operation completed successfully",
+      "messageDetails": "Access token assigned."
+    }
+  }
+}

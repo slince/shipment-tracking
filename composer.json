@@ -1,7 +1,23 @@
 {
     "name": "slince/shipment-tracking",
-    "keywords": ["shipment", "tracking", "tracker", "parcel", "USPS", "ePacket", "China Post"],
-    "description": "A flexible and shipment tracking library for multi carriers.",
+    "keywords": [
+        "shipment",
+        "tracking",
+        "tracker",
+        "parcel",
+        "DHL",
+        "DHL eCommerce",
+        "燕文物流",
+        "Yanwen Express",
+        "E邮宝",
+        "Epacket",
+        "E包裹",
+        "E特快",
+        "国际EMS",
+        "快递100",
+        "KuaiDi100"
+    ],
+    "description": "A flexible and awesome shipment tracking library for several carriers like DHL eCommerce, YanWen Express, Epacket, E包裹, E特快, 国际EMS, 快递100",
     "license": "MIT",
     "authors": [
         {
@@ -11,7 +27,7 @@
     ],
     "require": {
         "php": ">=5.6.0",
-        "guzzlehttp/guzzle": "^6.0"
+        "slince/shipment-tracking-foundation": "*@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.0|^6.0"

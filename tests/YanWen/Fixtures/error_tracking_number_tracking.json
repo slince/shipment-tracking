@@ -1,0 +1,17 @@
+{
+  "code": 0,
+  "message": null,
+  "state": 0,
+  "waybill_number": null,
+  "exchange_number": null,
+  "order_number": null,
+  "yanwen_number": null,
+  "origin_country": null,
+  "destin_country": null,
+  "receive_date": null,
+  "send_date": null,
+  "days": 0,
+  "origin_items": null,
+  "destin_items": null,
+  "last_item": null
+}

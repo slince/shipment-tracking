@@ -1,0 +1,133 @@
+{
+  "code": 0,
+  "message": "success",
+  "state": 40,
+  "waybill_number": "LW529183198CN",
+  "exchange_number": "LW529183198CN",
+  "order_number": "228311-3-296291",
+  "yanwen_number": "AA071365715YR",
+  "origin_country": "China",
+  "destin_country": "United States",
+  "receive_date": "2017-07-13T01:26:07.47+08:00",
+  "send_date": "2017-07-13T04:41:55.47+08:00",
+  "days": 13,
+  "origin_items": [
+    {
+      "location": "",
+      "message": "The item information was created by the seller.",
+      "timestamp": "2017-07-07T15:41:53.71+08:00"
+    },
+    {
+      "location": "",
+      "message": "Yanwen Acceptance.",
+      "timestamp": "2017-07-13T01:26:07.47+08:00"
+    },
+    {
+      "location": "",
+      "message": "Process completed in yanwen sorting center.",
+      "timestamp": "2017-07-13T01:26:09.47+08:00"
+    },
+    {
+      "location": "",
+      "message": "Despatched from yanwen sorting center.",
+      "timestamp": "2017-07-13T04:41:55.47+08:00"
+    },
+    {
+      "location": "无锡市",
+      "message": "无锡尚美路揽投部已收件（揽投员姓名：巩师祥,联系电话:18851500144）",
+      "timestamp": "2017-07-14T20:42:00+08:00"
+    },
+    {
+      "location": "无锡市",
+      "message": "到达 无锡长三角邮件处理中心 处理中心",
+      "timestamp": "2017-07-14T22:39:00+08:00"
+    },
+    {
+      "location": "无锡市",
+      "message": "离开无锡市 发往苏州市",
+      "timestamp": "2017-07-15T02:37:00+08:00"
+    },
+    {
+      "location": "苏州市",
+      "message": "到达苏州转运中心处理中心（经转）",
+      "timestamp": "2017-07-15T04:07:00+08:00"
+    },
+    {
+      "location": "苏州市",
+      "message": "离开苏州市 发往纽约肯尼迪机场（经转）",
+      "timestamp": "2017-07-15T22:07:00+08:00"
+    },
+    {
+      "location": "美国",
+      "message": "到达投递局",
+      "timestamp": "2017-07-26T10:20:00+08:00"
+    }
+  ],
+  "destin_items": [
+    {
+      "location": "",
+      "message": "Origin Post is Preparing Shipment",
+      "timestamp": "2017-07-14T20:42:00+08:00"
+    },
+    {
+      "location": "CHINA",
+      "message": "Acceptance",
+      "timestamp": "2017-07-14T20:42:00+08:00"
+    },
+    {
+      "location": "CHINA",
+      "message": "Processed Through Facility",
+      "timestamp": "2017-07-15T19:39:00+08:00"
+    },
+    {
+      "location": "",
+      "message": "Arrived at USPS Regional Facility",
+      "timestamp": "2017-07-21T11:56:00+08:00"
+    },
+    {
+      "location": "",
+      "message": "Departed USPS Regional Facility",
+      "timestamp": "2017-07-21T21:59:00+08:00"
+    },
+    {
+      "location": "",
+      "message": "Arrived at USPS Facility",
+      "timestamp": "2017-07-22T05:59:00+08:00"
+    },
+    {
+      "location": "",
+      "message": "In Transit to Destination",
+      "timestamp": "2017-07-24T09:59:00+08:00"
+    },
+    {
+      "location": "",
+      "message": "Arrived at USPS Regional Destination Facility",
+      "timestamp": "2017-07-25T15:21:00+08:00"
+    },
+    {
+      "location": "",
+      "message": "Departed USPS Regional Destination Facility",
+      "timestamp": "2017-07-25T15:22:00+08:00"
+    },
+    {
+      "location": "",
+      "message": "Arrived at Unit",
+      "timestamp": "2017-07-26T10:20:00+08:00"
+    },
+    {
+      "location": "美国",
+      "message": "妥投",
+      "timestamp": "2017-07-26T13:03:00+08:00"
+    },
+    {
+      "location": "",
+      "message": "Delivered, In/At Mailbox, Your item was delivered in or at the mailbox at 1:03 pm on July 26, 2017 in UPPER MARLBORO, MD 20772.",
+      "timestamp": "2017-07-26T13:03:00+08:00"
+    }
+  ],
+  "last_item": {
+    "location": "美国",
+    "message": "妥投",
+    "timestamp": "2017-07-26T13:03:00+08:00"
+  }
+}

@@ -1,0 +1,37 @@
+<traces>
+    <trace>
+        <acceptTime>2017-08-06 08:50:00</acceptTime>
+        <acceptAddress>AnHuiShengChiZhouShi 24516700</acceptAddress>
+        <remark>Posting</remark>
+    </trace>
+    <trace>
+        <acceptTime>2017-08-06 17:02:00</acceptTime>
+        <acceptAddress>AnHuiShengChiZhouShi SHITAI</acceptAddress>
+        <remark>Despatch from Sorting Center</remark>
+    </trace>
+    <trace>
+        <acceptTime>2017-08-06 18:48:00</acceptTime>
+        <acceptAddress>AnHuiShengChiZhouShi CHIZHOU</acceptAddress>
+        <remark>Arrival at Sorting Center</remark>
+    </trace>
+    <trace>
+        <acceptTime>2017-08-06 18:51:00</acceptTime>
+        <acceptAddress>  24710020</acceptAddress>
+        <remark>Despatch from Sorting Center</remark>
+    </trace>
+    <trace>
+        <acceptTime>2017-08-06 23:08:24</acceptTime>
+        <acceptAddress>AnHuiShengHeFeiShi 23001600</acceptAddress>
+        <remark>Arrival at Sorting Center</remark>
+    </trace>
+    <trace>
+        <acceptTime>2017-08-07 03:27:26</acceptTime>
+        <acceptAddress>AnHuiShengHeFeiShi GJCL</acceptAddress>
+        <remark>Despatch from Sorting Center</remark>
+    </trace>
+    <trace>
+        <acceptTime>2017-08-07 12:28:00</acceptTime>
+        <acceptAddress>ShangHaiShi 20110600</acceptAddress>
+        <remark>Arrival at Sorting Center</remark>
+    </trace>
+</traces>

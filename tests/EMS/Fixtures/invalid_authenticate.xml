@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+    <version>international_eub_us_1.1</version>
+    <status>error</status>
+    <code>V02</code>
+    <description>用户不存在或身份标识错误</description>
+</response>
