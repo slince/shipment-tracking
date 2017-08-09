@@ -1,9 +1,9 @@
 # Shipment Tracking SDK 
 
-[![Build Status](https://img.shields.io/travis/slince/shipment-tracking-awesome/master.svg?style=flat-square)](https://travis-ci.org/slince/shipment-tracking-awesome)
-[![Coverage Status](https://img.shields.io/codecov/c/github/slince/shipment-tracking-awesome.svg?style=flat-square)](https://codecov.io/github/slince/shipment-tracking-awesome)
-[![Latest Stable Version](https://img.shields.io/packagist/v/slince/shipment-tracking-awesome.svg?style=flat-square&label=stable)](https://packagist.org/packages/slince/shipment-tracking-awesome)
-[![Scrutinizer](https://img.shields.io/scrutinizer/g/slince/shipment-tracking-awesome.svg?style=flat-square)](https://scrutinizer-ci.com/g/slince/shipment-tracking-awesome/?branch=master)
+[![Build Status](https://img.shields.io/travis/slince/shipment-tracking/master.svg?style=flat-square)](https://travis-ci.org/slince/shipment-tracking)
+[![Coverage Status](https://img.shields.io/codecov/c/github/slince/shipment-tracking.svg?style=flat-square)](https://codecov.io/github/slince/shipment-tracking)
+[![Latest Stable Version](https://img.shields.io/packagist/v/slince/shipment-tracking.svg?style=flat-square&label=stable)](https://packagist.org/packages/slince/shipment-tracking)
+[![Scrutinizer](https://img.shields.io/scrutinizer/g/slince/shipment-tracking.svg?style=flat-square)](https://scrutinizer-ci.com/g/slince/shipment-tracking/?branch=master)
 
 A flexible and awesome shipment tracking library for several carriers like DHL eCommerce, YanWen Express, Epacket, E包裹, E特快, 国际EMS, 快递100
 
@@ -12,7 +12,7 @@ A flexible and awesome shipment tracking library for several carriers like DHL e
 Install via composer
 
 ```bash
-$ composer require slince/shipment-tracking-awesome
+$ composer require slince/shipment-tracking
 ```
 
 ## Table of Contents
@@ -28,7 +28,7 @@ $ composer require slince/shipment-tracking-awesome
 
 ```php
 
-$tracker = new Slince\ShipmentTrackingAwesome\DHLECommerce\DHLECommerceTracker(CLIENT_ID, PASSWORD);
+$tracker = new Slince\ShipmentTracking\DHLECommerce\DHLECommerceTracker(CLIENT_ID, PASSWORD);
 
 try {
    $shipment = $tracker->track('CNAQV100168101');
@@ -40,7 +40,7 @@ try {
    echo $shipment->getDestination();
    print_r($shipment->getEvents());  //print the shipment events
    
-} catch (Slince\ShipmentTracking\Exception\TrackException $exception) {
+} catch (Slince\ShipmentTracking\Foundation\Exception\TrackException $exception) {
     exit('Track error: ' . $exception->getMessage());
 }
 
@@ -62,7 +62,7 @@ try{
      $accessToken = $tracker->getAccessToken(true); // If the access token is invalid, refresh it.
      $shipment = $tacker->track('CNAQV100168101);
      //... to do
-} catch (Slince\ShipmentTracking\Exception\TrackException $exception) {
+} catch (Slince\ShipmentTracking\Foundation\Exception\TrackException $exception) {
     exit('Track error: ' . $exception->getMessage());
 }
 ```
@@ -71,7 +71,7 @@ try{
 
 ```php
 
-$tracker = new Slince\ShipmentTrackingAwesome\YanWenExpress\YanWenTracker(KEY, 'en');
+$tracker = new Slince\ShipmentTracking\YanWenExpress\YanWenTracker(KEY, 'en');
 
 try {
    $shipment = $tracker->track('CNAQV100168101');
@@ -83,7 +83,7 @@ try {
    echo $shipment->getDestination();
    print_r($shipment->getEvents());  //print the shipment events
    
-} catch (Slince\ShipmentTracking\Exception\TrackException $exception) {
+} catch (Slince\ShipmentTracking\Foundation\Exception\TrackException $exception) {
     exit('Track error: ' . $exception->getMessage());
 }
 
@@ -96,14 +96,14 @@ try {
 
 ```php
 
-$tracker = new Slince\ShipmentTrackingAwesome\EMS\EMSTracker(AUTHENTICATE, 'en');
+$tracker = new Slince\ShipmentTracking\EMS\EMSTracker(AUTHENTICATE, 'en');
 
 try {
    $shipment = $tracker->track('CNAQV100168101');
    
    print_r($shipment->getEvents());  //print the shipment events
    
-} catch (Slince\ShipmentTracking\Exception\TrackException $exception) {
+} catch (Slince\ShipmentTracking\Foundation\Exception\TrackException $exception) {
     exit('Track error: ' . $exception->getMessage());
 }
 
@@ -113,7 +113,7 @@ try {
 
 ```php
 
-$tracker = new Slince\ShipmentTrackingAwesome\KuaiDi100\KuaiDi100Tracker(APPKEY, 'shunfeng'); //承运商名称并不是标准的承运商代码，实际承运商代码请到kuaidi100.com查看
+$tracker = new Slince\ShipmentTracking\KuaiDi100\KuaiDi100Tracker(APPKEY, 'shunfeng'); //承运商名称并不是标准的承运商代码，实际承运商代码请到kuaidi100.com查看
 
 try {
    $shipment = $tracker->track('CNAQV100168101');
@@ -123,7 +123,7 @@ try {
    }
    print_r($shipment->getEvents());  //print the shipment events
    
-} catch (Slince\ShipmentTracking\Exception\TrackException $exception) {
+} catch (Slince\ShipmentTracking\Foundation\Exception\TrackException $exception) {
     exit('Track error: ' . $exception->getMessage());
 }
 
