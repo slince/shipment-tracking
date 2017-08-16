@@ -7,6 +7,7 @@
         "parcel",
         "DHL",
         "DHL eCommerce",
+        "USPS",
         "燕文物流",
         "Yanwen Express",
         "E邮宝",
@@ -17,7 +18,7 @@
         "快递100",
         "KuaiDi100"
     ],
-    "description": "A flexible and awesome shipment tracking library for several carriers like DHL eCommerce, YanWen Express, Epacket, E包裹, E特快, 国际EMS, 快递100",
+    "description": "A flexible and awesome shipment tracking library for several carriers like DHL eCommerce, USPS, YanWen Express, Epacket, E包裹, E特快, 国际EMS, 快递100",
     "license": "MIT",
     "authors": [
         {

@@ -14,6 +14,7 @@ use Slince\ShipmentTracking\Foundation\Exception\TrackException;
 use Slince\ShipmentTracking\Foundation\HttpAwareTracker;
 use Slince\ShipmentTracking\Foundation\Shipment;
 use Slince\ShipmentTracking\Foundation\ShipmentEvent;
+use Slince\ShipmentTracking\Utility;
 
 class EMSTracker extends HttpAwareTracker
 {
@@ -105,7 +106,11 @@ class EMSTracker extends HttpAwareTracker
     public function track($trackingNumber)
     {
         $request = new Request('GET', static::formatEndpoint($this->language, $trackingNumber));
-        $array = static::parseXml($this->sendRequest($request));
+        try {
+            $array = Utility::parseXml($this->sendRequest($request));
+        } catch (InvalidArgumentException $exception) {
+            throw new TrackException($exception->getMessage());
+        }
         if (!isset($array['trace'])) {
             throw new TrackException(sprintf('Bad response,code: "%s", message:"%s"', $array['code'], $array['description']));
         }
@@ -138,20 +143,6 @@ class EMSTracker extends HttpAwareTracker
     protected static function formatEndpoint($language, $trackingNumber)
     {
         return str_replace(['{language}', '{trackingNumber}'], [$language, $trackingNumber], static::TRACKING_ENDPOINT);
-    }
-
-    /**
-     * @param string $xml
-     * @return array
-     */
-    protected static function parseXml($xml)
-    {
-        libxml_use_internal_errors(true);
-        $data = simplexml_load_string($xml, null, LIBXML_NOERROR);
-        if ($data === false) {
-            throw new TrackException(sprintf('Invalid xml response "%s"', $xml));
-        }
-        return json_decode(json_encode($data), true);
     }
 
     /**

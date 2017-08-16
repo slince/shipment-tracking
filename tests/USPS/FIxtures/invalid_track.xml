@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TrackResponse>
+    <TrackInfo ID="LW618851101CN222">
+        <Error>
+            <Number>-2147219302</Number>
+            <Description>The tracking number may be incorrect or the status update is not yet available. Please verify your tracking number and try again later.</Description>
+            <HelpFile/>
+            <HelpContext/>
+        </Error>
+    </TrackInfo>
+</TrackResponse>

@@ -21,6 +21,7 @@ $ composer require slince/shipment-tracking
 - [YanWen Express(燕文物流)](#yanwen-express燕文物流)
 - [E邮宝(Epacket、EUP)、E包裹、E特快、国际EMS](#中国邮政)
 - [快递100](#快递100)
+- [USPS](#usps)
 
 ## Basic Usage
 
@@ -129,6 +130,30 @@ try {
 
 ```
 快递100的key需要自行申请，免费版的key在查询申通顺丰之类的单号时会受限，需要企业版才可以；附上快递100[文档](https://www.kuaidi100.com/openapi/api_post.shtml)
+
+### USPS
+
+```php
+
+$tracker = new Slince\ShipmentTracking\USPS\USPSTracker(USER_ID');
+
+try {
+   $shipment = $tracker->track('CNAQV100168101');
+   
+   if ($shipment->isDelivered()) {
+       echo "Delivered";
+   }
+   print_r($shipment->getEvents());  //print the shipment events
+   
+} catch (Slince\ShipmentTracking\Foundation\Exception\TrackException $exception) {
+    exit('Track error: ' . $exception->getMessage());
+}
+
+```
+
+You can get your user id on the following url.
+
+[https://www.usps.com/business/web-tools-apis/welcome.htm](https://www.usps.com/business/web-tools-apis/welcome.htm)
 
 ## License
  

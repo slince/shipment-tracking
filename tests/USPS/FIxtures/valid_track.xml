@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TrackResponse>
+    <TrackInfo ID="LW618851101C2N">
+        <TrackSummary>
+            <EventTime>12:51 pm</EventTime>
+            <EventDate>August 7, 2017</EventDate>
+            <Event>Delivered, In/At Mailbox</Event>
+            <EventCity>TUCSON</EventCity>
+            <EventState>AZ</EventState>
+            <EventZIPCode>85712</EventZIPCode>
+            <EventCountry/>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+            <DeliveryAttributeCode>01</DeliveryAttributeCode>
+        </TrackSummary>
+        <TrackDetail>
+            <EventTime>7:48 am</EventTime>
+            <EventDate>August 7, 2017</EventDate>
+            <Event>Out for Delivery</Event>
+            <EventCity>TUCSON</EventCity>
+            <EventState>AZ</EventState>
+            <EventZIPCode>85712</EventZIPCode>
+            <EventCountry/>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackDetail>
+        <TrackDetail>
+            <EventTime>7:38 am</EventTime>
+            <EventDate>August 7, 2017</EventDate>
+            <Event>Sorting Complete</Event>
+            <EventCity>TUCSON</EventCity>
+            <EventState>AZ</EventState>
+            <EventZIPCode>85712</EventZIPCode>
+            <EventCountry/>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackDetail>
+        <TrackDetail>
+            <EventTime>2:44 am</EventTime>
+            <EventDate>August 7, 2017</EventDate>
+            <Event>Arrived at Unit</Event>
+            <EventCity>TUCSON</EventCity>
+            <EventState>AZ</EventState>
+            <EventZIPCode>85711</EventZIPCode>
+            <EventCountry/>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackDetail>
+        <TrackDetail>
+            <EventTime>5:26 am</EventTime>
+            <EventDate>August 6, 2017</EventDate>
+            <Event>Departed USPS Regional Facility</Event>
+            <EventCity>TUCSON AZ DISTRIBUTION CENTER</EventCity>
+            <EventState/>
+            <EventZIPCode/>
+            <EventCountry/>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackDetail>
+        <TrackDetail>
+            <EventTime>3:08 am</EventTime>
+            <EventDate>August 6, 2017</EventDate>
+            <Event>Arrived at USPS Regional Facility</Event>
+            <EventCity>TUCSON AZ DISTRIBUTION CENTER</EventCity>
+            <EventState/>
+            <EventZIPCode/>
+            <EventCountry/>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackDetail>
+        <TrackDetail>
+            <EventTime>12:55 am</EventTime>
+            <EventDate>August 6, 2017</EventDate>
+            <Event>Departed USPS Regional Facility</Event>
+            <EventCity>PHOENIX AZ DISTRIBUTION CENTER ANNEX</EventCity>
+            <EventState/>
+            <EventZIPCode/>
+            <EventCountry/>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackDetail>
+        <TrackDetail>
+            <EventTime>8:05 pm</EventTime>
+            <EventDate>August 5, 2017</EventDate>
+            <Event>Arrived at USPS Regional Destination Facility</Event>
+            <EventCity>PHOENIX AZ DISTRIBUTION CENTER ANNEX</EventCity>
+            <EventState/>
+            <EventZIPCode/>
+            <EventCountry/>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackDetail>
+        <TrackDetail>
+            <EventTime>10:07 am</EventTime>
+            <EventDate>August 5, 2017</EventDate>
+            <Event>Departed USPS Regional Facility</Event>
+            <EventCity>LOS ANGELES CA INTERNATIONAL DISTRIBUTION CENTER</EventCity>
+            <EventState/>
+            <EventZIPCode/>
+            <EventCountry/>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackDetail>
+        <TrackDetail>
+            <EventTime>2:34 am</EventTime>
+            <EventDate>August 4, 2017</EventDate>
+            <Event>Arrived at USPS Regional Facility</Event>
+            <EventCity>LOS ANGELES CA INTERNATIONAL DISTRIBUTION CENTER</EventCity>
+            <EventState/>
+            <EventZIPCode/>
+            <EventCountry/>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackDetail>
+        <TrackDetail>
+            <EventTime>5:51 pm</EventTime>
+            <EventDate>August 3, 2017</EventDate>
+            <Event>Processed Through Facility</Event>
+            <EventCity>ISC LOS ANGELES CA (USPS)</EventCity>
+            <EventState/>
+            <EventZIPCode/>
+            <EventCountry/>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackDetail>
+        <TrackDetail>
+            <EventTime/>
+            <EventDate/>
+            <Event>Origin Post is Preparing Shipment</Event>
+            <EventCity/>
+            <EventState/>
+            <EventZIPCode/>
+            <EventCountry/>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackDetail>
+        <TrackDetail>
+            <EventTime>6:46 pm</EventTime>
+            <EventDate>July 30, 2017</EventDate>
+            <Event>Processed Through Facility</Event>
+            <EventCity>SHANGHAI EMS</EventCity>
+            <EventState/>
+            <EventZIPCode/>
+            <EventCountry>CHINA</EventCountry>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackDetail>
+        <TrackDetail>
+            <EventTime>8:04 pm</EventTime>
+            <EventDate>July 29, 2017</EventDate>
+            <Event>Acceptance</Event>
+            <EventCity/>
+            <EventState/>
+            <EventZIPCode/>
+            <EventCountry>CHINA</EventCountry>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackDetail>
+    </TrackInfo>
+</TrackResponse>
