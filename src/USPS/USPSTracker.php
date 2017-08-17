@@ -109,6 +109,7 @@ XML;
             $country = empty($eventData['EventCountry']) ? '' : $eventData['EventCountry'];
             $state = empty($eventData['EventState']) ? '' : $eventData['EventState'];
             $city = empty($eventData['EventCity']) ? '' : $eventData['EventCity'];
+            $zipCode = empty($eventData['EventZIPCode']) ? '' : $eventData['EventZIPCode'];
             return ShipmentEvent::fromArray([
                 'date' => "{$day} {$time}",
                 'location' => "{$city} {$state} {$country}",
@@ -117,7 +118,8 @@ XML;
                 'day' => $day,
                 'city' => $city,
                 'state' => $state,
-                'country' => $country
+                'country' => $country,
+                'zipCode' => $zipCode
             ]);
         }, array_reverse($array['TrackInfo']['TrackDetail']));
         $shipment = new Shipment($events);

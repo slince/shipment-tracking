@@ -135,7 +135,7 @@ try {
 
 ```php
 
-$tracker = new Slince\ShipmentTracking\USPS\USPSTracker(USER_ID');
+$tracker = new Slince\ShipmentTracking\USPS\USPSTracker(USER_ID);
 
 try {
    $shipment = $tracker->track('CNAQV100168101');
