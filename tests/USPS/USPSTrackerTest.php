@@ -4,7 +4,6 @@ namespace Slince\ShipmentTracking\Tests\USPS;
 use PHPUnit\Framework\TestCase;
 use Slince\ShipmentTracking\Foundation\Exception\TrackException;
 use Slince\ShipmentTracking\USPS\USPSTracker;
-use Slince\ShipmentTracking\Utility;
 
 class USPSTrackerTest extends TestCase
 {
