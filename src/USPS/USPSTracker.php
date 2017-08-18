@@ -6,6 +6,8 @@
 namespace Slince\ShipmentTracking\USPS;
 
 use function GuzzleHttp\Promise\promise_for;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 use Slince\ShipmentTracking\Foundation\Exception\TrackException;
 use Slince\ShipmentTracking\Foundation\HttpAwareTracker;
 use GuzzleHttp\Client as HttpClient;
@@ -55,8 +57,13 @@ class USPSTracker extends HttpAwareTracker
     public function track($trackingNumber)
     {
         try {
-            $body = $this->request($trackingNumber);
-            $array = Utility::parseXml($body);
+            $response = $this->request([
+                'query' => [
+                    'API' => 'TrackV2',
+                    'XML' => static::buildXml($this->userId, $trackingNumber)
+                ]
+            ]);
+            $array = Utility::parseXml($response->getBody());
         } catch (\Exception $exception) {
             throw new TrackException($exception->getMessage());
         }
@@ -70,14 +77,14 @@ class USPSTracker extends HttpAwareTracker
         return $shipment;
     }
 
-    protected function request($trackingNumber)
+    /**
+     * @param array $options
+     * @return ResponseInterface
+     * @codeCoverageIgnore
+     */
+    protected function request($options)
     {
-        return $this->getHttpClient()->get(static::TRACKING_ENDPOINT, [
-            'query' => [
-                'API' => 'TrackV2',
-                'XML' => static::buildXml($this->userId, $trackingNumber)
-            ]
-        ])->getBody();
+        return $this->getHttpClient()->get(static::TRACKING_ENDPOINT, $options);
     }
 
     /**

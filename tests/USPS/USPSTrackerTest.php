@@ -1,6 +1,7 @@
 <?php
 namespace Slince\ShipmentTracking\Tests\USPS;
 
+use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use Slince\ShipmentTracking\Foundation\Exception\TrackException;
 use Slince\ShipmentTracking\USPS\USPSTracker;
@@ -18,7 +19,7 @@ class USPSTrackerTest extends TestCase
             ->setConstructorArgs(['foo'])
             ->getMock();
         $tracker->method('request')
-            ->willReturn(file_get_contents(__DIR__ . '/Fixtures/' . $fixture . '.xml'));
+            ->willReturn(new Response(200, [], file_get_contents(__DIR__ . '/Fixtures/' . $fixture . '.xml')));
         return $tracker;
     }
 
