@@ -108,6 +108,9 @@ XML;
      */
     protected static function buildShipment($array)
     {
+        $trackDetails = is_numeric(key($array['TrackInfo']['TrackDetail']))
+            ? $array['TrackInfo']['TrackDetail']
+            : [$array['TrackInfo']['TrackDetail']];
         $events = array_map(function($eventData){
             $time = empty($eventData['EventTime']) ? '' : $eventData['EventTime'];
             $day = empty($eventData['EventDate']) ? '' : $eventData['EventDate'];
@@ -126,7 +129,8 @@ XML;
                 'country' => $country,
                 'zipCode' => $zipCode
             ]);
-        }, array_reverse($array['TrackInfo']['TrackDetail']));
+        }, array_reverse($trackDetails));
+        
         $shipment = new Shipment($events);
         if (isset($array['TrackInfo']['TrackSummary']['DeliveryAttributeCode'])) {
             $shipment->setIsDelivered($array['TrackInfo']['TrackSummary']['DeliveryAttributeCode'] == '01');

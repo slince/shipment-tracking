@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TrackResponse>
+    <TrackInfo ID="LW618851101C2N">
+        <TrackSummary>
+            <EventTime>12:51 pm</EventTime>
+            <EventDate>August 7, 2017</EventDate>
+            <Event>Delivered, In/At Mailbox</Event>
+            <EventCity>TUCSON</EventCity>
+            <EventState>AZ</EventState>
+            <EventZIPCode>85712</EventZIPCode>
+            <EventCountry/>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+            <DeliveryAttributeCode>01</DeliveryAttributeCode>
+        </TrackSummary>
+        <TrackDetail>
+            <EventTime>7:48 am</EventTime>
+            <EventDate>August 7, 2017</EventDate>
+            <Event>Out for Delivery</Event>
+            <EventCity>TUCSON</EventCity>
+            <EventState>AZ</EventState>
+            <EventZIPCode>85712</EventZIPCode>
+            <EventCountry/>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackDetail>
+    </TrackInfo>
+</TrackResponse>

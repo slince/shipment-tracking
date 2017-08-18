@@ -111,7 +111,7 @@ class EMSTracker extends HttpAwareTracker
         } catch (InvalidArgumentException $exception) {
             throw new TrackException($exception->getMessage());
         }
-        if (!isset($array['trace'])) {
+        if (empty($array['trace'])) {
             throw new TrackException(sprintf('Bad response,code: "%s", message:"%s"', $array['code'], $array['description']));
         }
         return static::buildShipment($array);
@@ -151,13 +151,14 @@ class EMSTracker extends HttpAwareTracker
      */
     protected static function buildShipment($json)
     {
+        $trace = is_numeric(key($json['trace'])) ? $json['trace'] : [$json['trace']];
         $events = array_map(function($item) {
             return ShipmentEvent::fromArray([
                 'location' => $item['acceptAddress'],
                 'description' => $item['remark'],
                 'date' => $item['acceptTime'],
             ]);
-        }, $json['trace']);
+        }, $trace);
         $shipment = new Shipment($events);
         if ($firstEvent = reset($events)) {
             $shipment->setDeliveredAt($firstEvent->getDate());

@@ -39,6 +39,14 @@ class USPSTrackerTest extends TestCase
         $this->assertCount(13, $shipment->getEvents());
     }
 
+    public function testOneTraceTrack()
+    {
+        $tracker = $this->getTrackerMock('one_trace_track');
+        $shipment = $tracker->track('foo');
+        $this->assertTrue($shipment->isDelivered());
+        $this->assertCount(1, $shipment->getEvents());
+    }
+
     public function testErrorTrack()
     {
         $tracker = $this->getTrackerMock('invalid_track');

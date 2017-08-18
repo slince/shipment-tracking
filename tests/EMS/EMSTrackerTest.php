@@ -59,6 +59,14 @@ class EMSTrackerTest extends TestCase
         $tracker->track('foo');
     }
 
+    public function testOneTrace()
+    {
+        $tracker = $this->getTrackerMock('one_trace_track');
+        $shipment = $tracker->track('foo');
+        $this->assertNull($shipment->isDelivered());
+        $this->assertCount(1, $shipment->getEvents());
+    }
+
     public function testInvalidAuthenticate()
     {
         $tracker = $this->getTrackerMock('invalid_authenticate');
