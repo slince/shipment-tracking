@@ -11,12 +11,18 @@ use Psr\Http\Message\ResponseInterface;
 use Slince\ShipmentTracking\Foundation\Exception\TrackException;
 use Slince\ShipmentTracking\Foundation\HttpAwareTracker;
 use Slince\ShipmentTracking\Foundation\ShipmentEvent;
+use GuzzleHttp\Client as HttpClient;
 
 class SeventeenTracker extends HttpAwareTracker
 {
     const TRACK_ENDPOINT = 'http://www.17track.net/restapi/handlertrack.ashx';
 
     const REFERER = 'http://www.17track.net/zh-cn/track?nums={trackingNumber}';
+
+    public function __construct(HttpClient $httpClient = null)
+    {
+        $httpClient && $this->setHttpClient($httpClient);
+    }
 
     /**
      * {@inheritdoc}

@@ -5,8 +5,6 @@
  */
 namespace Slince\ShipmentTracking\USPS;
 
-use function GuzzleHttp\Promise\promise_for;
-use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Slince\ShipmentTracking\Foundation\Exception\TrackException;
 use Slince\ShipmentTracking\Foundation\HttpAwareTracker;
