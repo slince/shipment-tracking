@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TrackResponse>
+    <TrackInfo ID="LW767990924CN">
+        <TrackSummary>
+            <EventTime>3:54 pm</EventTime>
+            <EventDate>September 2, 2017</EventDate>
+            <Event>Acceptance</Event>
+            <EventCity/>
+            <EventState/>
+            <EventZIPCode/>
+            <EventCountry>CHINA</EventCountry>
+            <FirmName/>
+            <Name/>
+            <AuthorizedAgent>false</AuthorizedAgent>
+        </TrackSummary>
+    </TrackInfo>
+</TrackResponse>

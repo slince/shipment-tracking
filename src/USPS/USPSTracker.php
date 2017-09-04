@@ -71,6 +71,9 @@ class USPSTracker extends HttpAwareTracker
         if (isset($array['TrackInfo']['Error'])) {
             throw new TrackException($array['TrackInfo']['Error']['Description']);
         }
+        if (!isset($array['TrackInfo']['TrackDetail'])) {
+            throw new TrackException('Cannot find any events');
+        }
         $shipment = static::buildShipment($array);
         return $shipment;
     }
