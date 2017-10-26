@@ -114,6 +114,12 @@ XML;
         $trackDetails = is_numeric(key($array['TrackInfo']['TrackDetail']))
             ? $array['TrackInfo']['TrackDetail']
             : [$array['TrackInfo']['TrackDetail']];
+
+        //The track summary is also valid
+        if (isset($array['TrackInfo']['TrackSummary'])) {
+            array_unshift($trackDetails, $array['TrackInfo']['TrackSummary']);
+        }
+
         $events = array_map(function($eventData){
             $time = empty($eventData['EventTime']) ? '' : $eventData['EventTime'];
             $day = empty($eventData['EventDate']) ? '' : $eventData['EventDate'];
