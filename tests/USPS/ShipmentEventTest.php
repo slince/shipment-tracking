@@ -1,6 +1,7 @@
 <?php
 namespace Slince\ShipmentTracking\Tests\USPS;
 
+use Carbon\Carbon;
 use PHPUnit\Framework\TestCase;
 use Slince\ShipmentTracking\USPS\ShipmentEvent;
 
@@ -12,9 +13,8 @@ class ShipmentEventTest extends TestCase
             'city' => 'foo',
             'country' => 'US',
             'state' => 'bar',
-            'time' => '14:00 am',
-            'day' => '2017-12-12',
-            'date' => '2017-12-12 14:00 am',
+            'day' => 'July 29, 2017',
+            'date' => 'July 29, 2017 8:04 am',
             'location' => 'foo bar US',
             'description' => 'foo message',
             'zipCode' => '025112'
@@ -25,9 +25,7 @@ class ShipmentEventTest extends TestCase
         $this->assertEquals('US', $event->getCountry());
         $this->assertEquals('foo bar US', $event->getLocation());
         $this->assertEquals('foo message', $event->getDescription());
-        $this->assertEquals('14:00 am', $event->getTime());
-        $this->assertEquals('2017-12-12', $event->getDay());
-        $this->assertEquals('2017-12-12 14:00 am', $event->getDate());
+        $this->assertEquals('July 29, 2017', $event->getDay());
         $this->assertEquals('025112', $event->getZipCode());
     }
 
@@ -37,9 +35,8 @@ class ShipmentEventTest extends TestCase
             'city' => 'foo',
             'country' => 'US',
             'state' => 'bar',
-            'time' => '14:00 am',
-            'day' => '2017-12-12',
-            'date' => '2017-12-12 14:00 am',
+            'day' => 'July 29, 2017',
+            'date' => 'July 29, 2017 8:04 am',
             'location' => 'foo bar US',
             'description' => 'foo message',
             'zipCode' => '025112'
@@ -54,12 +51,10 @@ class ShipmentEventTest extends TestCase
         $this->assertEquals('JiangSu CN', $event->getLocation());
         $event->setDescription('bar');
         $this->assertEquals('bar', $event->getDescription());
-        $event->setTime('15:30 PM');
-        $this->assertEquals('15:30 PM', $event->getTime());
         $event->setDay('2017-08-01');
         $this->assertEquals('2017-08-01', $event->getDay());
-        $event->setDate('2017-08-01 15:30');
-        $this->assertEquals('2017-08-01 15:30', $event->getDate());
+        $event->setDate('2017-08-01 08:30 PM');
+        $this->assertEquals('2017-08-01 20:30:00', $event->getDate());
         $event->setZipCode('025115');
         $this->assertEquals('025115', $event->getZipCode());
     }

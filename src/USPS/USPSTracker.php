@@ -130,7 +130,6 @@ XML;
             $zipCode = empty($eventData['EventZIPCode']) ? '' : $eventData['EventZIPCode'];
             return ShipmentEvent::fromArray([
                 'day' => $day,
-                'time' => $time,
                 'city' => $city,
                 'state' => $state,
                 'country' => $country,

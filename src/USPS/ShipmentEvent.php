@@ -13,12 +13,6 @@ class ShipmentEvent extends BaseShipmentEvent
      * @deprecated
      * @var string
      */
-    protected $time;
-
-    /**
-     * @deprecated
-     * @var string
-     */
     protected $day;
 
     /**
@@ -120,26 +114,6 @@ class ShipmentEvent extends BaseShipmentEvent
     public function setState($state)
     {
         $this->state = $state;
-        return $this;
-    }
-
-    /**
-     * @return string
-     * @deprecated
-     */
-    public function getTime()
-    {
-        return $this->time;
-    }
-
-    /**
-     * @param string $time
-     * @return ShipmentEvent
-     * @deprecated
-     */
-    public function setTime($time)
-    {
-        $this->time = $time;
         return $this;
     }
 
