@@ -10,21 +10,25 @@ use Slince\ShipmentTracking\Foundation\ShipmentEvent as BaseShipmentEvent;
 class ShipmentEvent extends BaseShipmentEvent
 {
     /**
+     * @deprecated
      * @var string
      */
     protected $time;
 
     /**
+     * @deprecated
      * @var string
      */
     protected $day;
 
     /**
+     * @deprecated
      * @var string
      */
     protected $city;
 
     /**
+     * @deprecated
      * @var string
      */
     protected $state;
@@ -35,12 +39,14 @@ class ShipmentEvent extends BaseShipmentEvent
     protected $zipCode;
 
     /**
+     * @deprecated
      * @var string
      */
     protected $country;
 
     /**
      * @return string
+     * @deprecated
      */
     public function getCity()
     {
@@ -50,6 +56,7 @@ class ShipmentEvent extends BaseShipmentEvent
     /**
      * @param string $city
      * @return ShipmentEvent
+     * @deprecated
      */
     public function setCity($city)
     {
@@ -59,6 +66,7 @@ class ShipmentEvent extends BaseShipmentEvent
 
     /**
      * @return string
+     * @deprecated
      */
     public function getCountry()
     {
@@ -68,6 +76,7 @@ class ShipmentEvent extends BaseShipmentEvent
     /**
      * @param string $country
      * @return ShipmentEvent
+     * @deprecated
      */
     public function setCountry($country)
     {
@@ -77,6 +86,7 @@ class ShipmentEvent extends BaseShipmentEvent
 
     /**
      * @return string
+     * @deprecated
      */
     public function getDay()
     {
@@ -86,6 +96,7 @@ class ShipmentEvent extends BaseShipmentEvent
     /**
      * @param string $day
      * @return ShipmentEvent
+     * @deprecated
      */
     public function setDay($day)
     {
@@ -104,6 +115,7 @@ class ShipmentEvent extends BaseShipmentEvent
     /**
      * @param string $state
      * @return ShipmentEvent
+     * @deprecated
      */
     public function setState($state)
     {
@@ -113,6 +125,7 @@ class ShipmentEvent extends BaseShipmentEvent
 
     /**
      * @return string
+     * @deprecated
      */
     public function getTime()
     {
@@ -122,6 +135,7 @@ class ShipmentEvent extends BaseShipmentEvent
     /**
      * @param string $time
      * @return ShipmentEvent
+     * @deprecated
      */
     public function setTime($time)
     {

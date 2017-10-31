@@ -5,6 +5,7 @@
  */
 namespace Slince\ShipmentTracking\SeventeenTrack;
 
+use Carbon\Carbon;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -89,7 +90,7 @@ class SeventeenTracker extends HttpAwareTracker
             return ShipmentEvent::fromArray([
                 'description' => $item['z'],
                 'location' => $item['d'],
-                'date' => $item['a']
+                'date' => Carbon::parse($item['a'])
             ]);
         }, array_reverse($track['z1']));
         $shipment->setOriginEvents($originEvents);
@@ -98,7 +99,7 @@ class SeventeenTracker extends HttpAwareTracker
             return ShipmentEvent::fromArray([
                 'description' => $item['z'],
                 'location' => $item['d'],
-                'date' => $item['a']
+                'date' => Carbon::parse($item['a'])
             ]);
         }, array_reverse($track['z2']));
         $shipment->setDestinationEvents($destinationEvents);

@@ -5,6 +5,7 @@
  */
 namespace Slince\ShipmentTracking\USPS;
 
+use Carbon\Carbon;
 use Psr\Http\Message\ResponseInterface;
 use Slince\ShipmentTracking\Foundation\Exception\TrackException;
 use Slince\ShipmentTracking\Foundation\HttpAwareTracker;
@@ -128,14 +129,14 @@ XML;
             $city = empty($eventData['EventCity']) ? '' : $eventData['EventCity'];
             $zipCode = empty($eventData['EventZIPCode']) ? '' : $eventData['EventZIPCode'];
             return ShipmentEvent::fromArray([
-                'date' => "{$day} {$time}",
-                'location' => "{$city} {$state} {$country}",
-                'description' => $eventData['Event'],
-                'time' => $time,
                 'day' => $day,
+                'time' => $time,
                 'city' => $city,
                 'state' => $state,
                 'country' => $country,
+                'date' => Carbon::parse("{$day} {$time}"),
+                'location' => new Location($country, $state, $city),
+                'description' => $eventData['Event'],
                 'zipCode' => $zipCode
             ]);
         }, array_reverse($trackDetails));

@@ -5,6 +5,7 @@
  */
 namespace Slince\ShipmentTracking\EMS;
 
+use Carbon\Carbon;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Exception\GuzzleException;
@@ -156,7 +157,7 @@ class EMSTracker extends HttpAwareTracker
             return ShipmentEvent::fromArray([
                 'location' => $item['acceptAddress'],
                 'description' => $item['remark'],
-                'date' => $item['acceptTime'],
+                'date' => Carbon::parse($item['acceptTime']),
             ]);
         }, $trace);
         $shipment = new Shipment($events);

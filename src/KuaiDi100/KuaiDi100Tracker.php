@@ -5,6 +5,7 @@
  */
 namespace Slince\ShipmentTracking\KuaiDi100;
 
+use Carbon\Carbon;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Exception\GuzzleException;
@@ -129,7 +130,7 @@ class KuaiDi100Tracker extends HttpAwareTracker
             return ShipmentEvent::fromArray([
                 'location' => $item['location'],
                 'description' => $item['context'],
-                'date' => $item['time'],
+                'date' => Carbon::parse($item['time']),
             ]);
         }, $json['data']);
         $shipment = new Shipment($events);

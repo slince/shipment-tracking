@@ -5,11 +5,13 @@
  */
 namespace Slince\ShipmentTracking\DHLECommerce;
 
+use Carbon\Carbon;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\RequestInterface;
 use Slince\ShipmentTracking\DHLECommerce\Exception\InvalidAccessTokenException;
+use Slince\ShipmentTracking\Common\Location\Location;
 use Slince\ShipmentTracking\Foundation\Shipment;
 use Slince\ShipmentTracking\Foundation\ShipmentEvent;
 use Slince\ShipmentTracking\Foundation\HttpAwareTracker;
@@ -148,19 +150,28 @@ class DHLECommerceTracker extends HttpAwareTracker
         }
         $events = array_map(function($item) {
             return ShipmentEvent::fromArray([
-                'location' => $item['address']['city'],
+                'location' => new Location($item['address']['countryCode'], $item['address']['state'], $item['address']['city']),
                 'description' => $item['description'],
-                'date' => $item['timestamp'],
+                'date' => Carbon::parse($item['timestamp']),
                 'status' => $item['status']
             ]);
         }, $json['events']);
         $shipment = new Shipment($events);
         $isDelivered = ($lastEvent = end($events)) ? $lastEvent->getStatus() == 71093 : null;
-        $shipment->setIsDelivered($isDelivered)
-            ->setDestination($json['destination']['countryCode']);
+
+        $shipment->setIsDelivered($isDelivered);
+
+        empty($json['destination']['countryCode']) || static::applyDestination($shipment, $json['destination']['countryCode']);
+
         if ($firstEvent = reset($events)) {
             $shipment->setDeliveredAt($firstEvent->getDate());
         }
         return $shipment;
+    }
+
+    protected static function applyDestination(Shipment $shipment, $countryCode)
+    {
+        $destination  = new Location($countryCode, null, null);
+        $shipment->setDestination($destination);
     }
 }

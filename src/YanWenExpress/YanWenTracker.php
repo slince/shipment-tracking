@@ -5,6 +5,7 @@
  */
 namespace Slince\ShipmentTracking\YanWenExpress;
 
+use Carbon\Carbon;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Exception\GuzzleException;
@@ -123,7 +124,7 @@ class YanWenTracker extends HttpAwareTracker
             return ShipmentEvent::fromArray([
                 'location' => $item['location'],
                 'description' => $item['message'],
-                'date' => $item['timestamp'],
+                'date' => Carbon::parse($item['timestamp']),
                 'status' => null
             ]);
         }, $shippingItems);
@@ -134,7 +135,7 @@ class YanWenTracker extends HttpAwareTracker
             return ShipmentEvent::fromArray([
                 'location' => $item['location'],
                 'description' => $item['message'],
-                'date' => $item['timestamp'],
+                'date' => Carbon::parse($item['timestamp']),
                 'status' => null
             ]);
         }, (array)$json['origin_items']));
@@ -144,7 +145,7 @@ class YanWenTracker extends HttpAwareTracker
             return ShipmentEvent::fromArray([
                 'location' => $item['location'],
                 'description' => $item['message'],
-                'date' => $item['timestamp'],
+                'date' => Carbon::parse($item['timestamp']),
                 'status' => null
             ]);
         }, (array)$json['destin_items']));
