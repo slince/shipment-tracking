@@ -34,6 +34,7 @@ class Location extends AbstractLocation
 
     public function __construct($countryCode, $state, $city)
     {
+        $countryCode = strtolower($countryCode);
         $countryCode && $this->applyCountry($countryCode);
         $this->state = $state;
         $this->city = $city;

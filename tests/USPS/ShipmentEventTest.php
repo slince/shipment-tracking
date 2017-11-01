@@ -1,7 +1,6 @@
 <?php
 namespace Slince\ShipmentTracking\Tests\USPS;
 
-use Carbon\Carbon;
 use PHPUnit\Framework\TestCase;
 use Slince\ShipmentTracking\USPS\ShipmentEvent;
 
