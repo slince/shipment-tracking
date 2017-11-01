@@ -89,7 +89,7 @@ class SeventeenTracker extends HttpAwareTracker
         $originEvents = array_map(function($item){
             return ShipmentEvent::fromArray([
                 'description' => $item['z'],
-                'location' => $item['d'],
+                'location' => $item['d'] ?:  $item['c'],
                 'date' => Carbon::parse($item['a'])
             ]);
         }, array_reverse($track['z1']));
@@ -98,7 +98,7 @@ class SeventeenTracker extends HttpAwareTracker
         $destinationEvents = array_map(function($item){
             return ShipmentEvent::fromArray([
                 'description' => $item['z'],
-                'location' => $item['d'],
+                'location' => $item['d'] ?:  $item['c'],
                 'date' => Carbon::parse($item['a'])
             ]);
         }, array_reverse($track['z2']));
