@@ -22,6 +22,7 @@ $ composer require slince/shipment-tracking
 - [E邮宝(Epacket、EUP)、E包裹、E特快、国际EMS](#中国邮政)
 - [快递100](#快递100)
 - [USPS](#usps)
+- [递四方](#递四方)
 
 ## Basic Usage
 
@@ -154,6 +155,25 @@ try {
 You can get your user id on the following url.
 
 [https://www.usps.com/business/web-tools-apis/welcome.htm](https://www.usps.com/business/web-tools-apis/welcome.htm)
+
+### 递四方
+
+```php
+
+$tracker = new Slince\ShipmentTracking\FourPartyExpress\FourPartyExpressTracker(APPKEY, APPSECRET);
+
+try {
+   $shipment = $tracker->track('CNAQV100168101');
+   
+   print_r($shipment->getEvents());  //print the shipment events
+   
+} catch (Slince\ShipmentTracking\Foundation\Exception\TrackException $exception) {
+    exit('Track error: ' . $exception->getMessage());
+}
+
+```
+
+APPKEY和APPSECRET 需要到递四方官网注册APP,审核之后即可获取到该参数；
 
 ## License
  

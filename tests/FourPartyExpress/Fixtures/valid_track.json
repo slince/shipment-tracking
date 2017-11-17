@@ -1,0 +1,29 @@
+{
+  "data":{
+    "deliveryOrderNo":"998071388879",
+    "destinationCountry":"CHINA",
+    "trackingList":[
+      {
+        "occurDatetime":"2016-12-10 13:46:50",
+        "occurLocation":"Dongguan",
+        "trackingContent":"Leaving the operating point"
+      },
+      {
+        "occurDatetime":"2016-12-10 13:28:06",
+        "occurLocation":"Dongguan",
+        "trackingContent":"Packing the operating point"
+      },
+      {
+        "occurDatetime":"2016-12-10 13:27:08",
+        "occurLocation":"Dongguan",
+        "trackingContent":"Picking the operating point"
+      },
+      {
+        "occurDatetime":"2016-12-10 10:20:00",
+        "occurLocation":"Dongguan",
+        "trackingContent":"Picking the operating point"
+      }
+    ]
+  },
+  "result":"1"
+}
