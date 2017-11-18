@@ -10,6 +10,7 @@ use Slince\ShipmentTracking\Foundation\Exception\TrackException;
 use Slince\ShipmentTracking\Foundation\HttpAwareTracker;
 use Slince\ShipmentTracking\Foundation\Shipment;
 use Slince\ShipmentTracking\Foundation\ShipmentEvent;
+use GuzzleHttp\Client as HttpClient;
 
 class FourPartyExpressTracker extends HttpAwareTracker
 {
@@ -17,11 +18,11 @@ class FourPartyExpressTracker extends HttpAwareTracker
 
     protected $appSecret;
 
-
-    public function __construct($appKey, $appSecret)
+    public function __construct($appKey, $appSecret, HttpClient $httpClient = null)
     {
         $this->appKey = $appKey;
         $this->appSecret = $appSecret;
+        $httpClient && $this->setHttpClient($httpClient);
     }
 
     /**
