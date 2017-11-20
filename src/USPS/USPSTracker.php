@@ -72,7 +72,7 @@ class USPSTracker extends HttpAwareTracker
         if (isset($array['TrackInfo']['Error'])) {
             throw new TrackException($array['TrackInfo']['Error']['Description']);
         }
-        if (!isset($array['TrackInfo']['TrackDetail'])) {
+        if (!isset($array['TrackInfo']['TrackSummary']) && !isset($array['TrackInfo']['TrackDetail'])) {
             throw new TrackException('Cannot find any events');
         }
         $shipment = static::buildShipment($array);
@@ -112,15 +112,17 @@ XML;
      */
     protected static function buildShipment($array)
     {
-        $trackDetails = is_numeric(key($array['TrackInfo']['TrackDetail']))
-            ? $array['TrackInfo']['TrackDetail']
-            : [$array['TrackInfo']['TrackDetail']];
-
+        if (!empty($array['TrackInfo']['TrackDetail'])) {
+            $trackDetails = is_numeric(key($array['TrackInfo']['TrackDetail']))
+                ? $array['TrackInfo']['TrackDetail']
+                : [$array['TrackInfo']['TrackDetail']];
+        } else {
+            $trackDetails =  [];
+        }
         //The track summary is also valid
         if (isset($array['TrackInfo']['TrackSummary'])) {
             array_unshift($trackDetails, $array['TrackInfo']['TrackSummary']);
         }
-
         $events = array_map(function($eventData){
             $time = empty($eventData['EventTime']) ? '' : $eventData['EventTime'];
             $day = empty($eventData['EventDate']) ? '' : $eventData['EventDate'];

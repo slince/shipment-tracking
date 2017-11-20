@@ -61,10 +61,10 @@ class USPSTrackerTest extends TestCase
         $tracker->track('foo');
     }
 
-    public function testNoEventTrack()
+    public function testOneEvent()
     {
         $tracker = $this->getTrackerMock('no_events_track');
-        $this->expectException(TrackException::class);
-        $tracker->track('foo');
+        $shipment = $tracker->track('foo');
+        $this->assertCount(1, $shipment->getEvents());
     }
 }
