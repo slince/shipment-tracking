@@ -155,7 +155,7 @@ class DHLECommerceTracker extends HttpAwareTracker
                 'date' => Carbon::parse($item['timestamp']),
                 'status' => $item['status']
             ]);
-        }, $json['events']);
+        }, array_reverse($json['events']));
         $shipment = new Shipment($events);
         $isDelivered = ($lastEvent = end($events)) ? $lastEvent->getStatus() == 71093 : null;
 
