@@ -111,6 +111,8 @@ try {
 
 ```
 
+注意：该库并不支持查询国内EMS包裹信息，相关文档主页[http://shipping.ems.com.cn/apiIndex](http://shipping.ems.com.cn/apiIndex)
+
 ### 快递100
 
 ```php
